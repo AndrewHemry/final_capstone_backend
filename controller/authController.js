@@ -1,31 +1,31 @@
 let db = require("../src/db")
-let argon = require("argon2")
+// let argon = require("argon2")
 let jwt = require("jsonwebtoken")
 
 let JWT_SECRET = process.env.JWT_SECRET
 
-let register = async function(req, res){
+// let register = async function(req, res){
 
-    let first_name = req.body.first_name
-    let last_name = req.body.last_name
-    let email_address = req.body.email_address
-    let password = req.body.password
+//     let first_name = req.body.first_name
+//     let last_name = req.body.last_name
+//     let email_address = req.body.email_address
+//     let password = req.body.password
 
-    let password_hash = await argon.hash(password)
+//     let password_hash = await argon.hash(password)
 
-    let sqlCommand = "INSERT into admin_login (first_name, last_name, email_address, password_hash) values (?, ?, ?, ?)"
-    let params = [first_name, last_name, email_address, password_hash]
+//     let sqlCommand = "INSERT into admin_login (first_name, last_name, email_address, password_hash) values (?, ?, ?, ?)"
+//     let params = [first_name, last_name, email_address, password_hash]
 
-    db.query(sqlCommand, params, function(err, results){
-        if(err){
-            console.log("Registartion Unsuccessful", err)
-            res.sendStatus(500)
-        } else {
-            console.log("Successfully Registered", results)
-            res.sendStatus(201)
-        }
-    })
-}
+//     db.query(sqlCommand, params, function(err, results){
+//         if(err){
+//             console.log("Registartion Unsuccessful", err)
+//             res.sendStatus(500)
+//         } else {
+//             console.log("Successfully Registered", results)
+//             res.sendStatus(201)
+//         }
+//     })
+// }
 
 let login = async function(req, res){
 
@@ -56,9 +56,11 @@ let login = async function(req, res){
         }
 
         let admin_id = results[0].id
-        let password_hash = results[0].password_hash
+        let password_hash = results[0].password
+        // let password_hash = results[0].password_hash
 
-        let goodPass = await argon.verify(password_hash, password)
+        // let goodPass = await argon.verify(password_hash, password)
+        let goodPass = password === admin_password;
 
         if(goodPass){
 
