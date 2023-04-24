@@ -20,6 +20,6 @@ router.delete("/company/:company_id/branch/:branch_id/employee/:id", middleware.
 router.get("/company/:company_id/branch/:branch_id/employee/:id", middleware.checkJWT, companyChecker.companyCheck, employeeController.showEmployee)
 
 //LIST all Employees
-// router.get("/company/:company_id/branch/:branch_id/employee", middleware.checkJWT, companyChecker.companyCheck, employeeController.listEmployees)
+router.get("/company/:company_id/branch/:branch_id/employee", middleware.checkJWT, companyChecker.companyCheck, employeeController.listEmployees)
 
 module.exports = router;

@@ -116,20 +116,20 @@ const showEmployee = function(req, res){
     })
 }
 
-// const listEmployees = function(req, res){
-//     // This is the query to list all users in the database
-//     // SQL Select id, first_name, last_name, is_active
-//     // LIST ALL EMPLOYEES FOR A SPECIFIC COMPANY
+const listEmployees = function(req, res){
+    // This is the query to list all users in the database
+    // SQL Select id, first_name, last_name, is_active
+    // LIST ALL EMPLOYEES FOR A SPECIFIC COMPANY
 
-//     db.query("SELECT id, first_name, last_name, is_active FROM user_information", function(err, results){
-//         if(err){
-//             console.log("Failed to fetch users from the database", err)
-//             res.sendStatus(500)
-//         } else {
-//             res.json(results)
-//         }
-//     })
-// }
+    db.query("SELECT id, first_name, last_name, is_active FROM user_information", function(err, results){
+        if(err){
+            console.log("Failed to fetch users from the database", err)
+            res.sendStatus(500)
+        } else {
+            res.json(results)
+        }
+    })
+}
 
 
 module.exports = {
