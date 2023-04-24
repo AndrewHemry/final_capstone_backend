@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew's Directory App</title>
+</head>
+<body>
+    <header>Andrew's Directory App</header>
+    <div>
+        <p>Guide & Tutorial to this Express App:</p>
+        <p>This app supports the following functions:</p>
+        <ul>
+            <p>Register & Login Routes</p>
+            <li>Register as an Admin /register - (POST) with first_name (string), last_name (string), email_address (string), password (string)</li>
+            <li>Login as an Admin /login - (POST) with email_address (string), password (string)</li>
+        </ul>
+
+        <ul>
+            <p>Company Routes</p>
+            <li>Create a Company - (POST) /company - with company_name (string) </li>
+            <li>Update Company Name (PATCH) /company/:company_id (PATCH) with company_name (string)</li>
+            <li>INTERNAL ONLY - List Available Companies - (GET) /company</li>
+        </ul>
+
+        <ul>
+            <p>Add/Remove Admin To/From Company</p>
+            <li>Invite an Admin - (POST) /company/:company_id - with email_address (string)</li>
+            <li>Remove Admin from Company - (DELETE) /company/:company_id/remove/:admin_id</li>
+        </ul>
+
+        <ul>
+            <p>Company Branches</p>
+            <li>Create a Company Branch - (POST) /company/:company_id/branch - with branch_name (string)</li>
+            <li>Update a Company Branch Name - (PATCH) /company/:company_id/branch/:branch_id - with branch_name (string)</li>
+            <li>Delete a Company Branch - (DELETE) /company/:company_id/branch/:branch_id</li>
+            <li>List Company Branches - (GET) /company/:company_id/branch</li>
+            <li>Show Specific Company Branch - (GET) /company/:company_id/branch/:branch_id</li>
+            <li>List Employees in Specific Branch - (GET) /company/:company_id/branch/:branch_id/directory</li>
+        </ul>
+
+        <ul>
+            <p>Employee Calls</p>
+            <!-- <li>List of All Users Available - (GET) /company/:company_id/branch/:branch_id/employee</li> -->
+            <li>Detailed Information About a Specific User - (GET) /company/:company_id/branch/:branch_id/employee/:id</li>
+            <li>To Create a New User - (POST) /company/:company_id/branch/:branch_id/employee - with first_name (string), last_name (string), employee_email (string), job_title (string)</li>
+            <li>To Update an Existing User - (PUT) /company/:company_id/branch/:branch_id/employee/:id - with first_name (string), last_name (string), employee_email (string), job_title (string), is_active (boolean)</li>
+            <li>To Delete an Existing/Specific User - (DELETE) /company/:company_id/branch/:branch_id/employee/:id</li>
+        </ul>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>
