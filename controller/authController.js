@@ -84,6 +84,8 @@ let login = async function(req, res){
     })
 }
 
-module.exports = {
-    register, login
-}
+module.exports = { login }
+
+// module.exports = {
+//     register, login
+// }
