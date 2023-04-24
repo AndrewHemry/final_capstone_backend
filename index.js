@@ -1,11 +1,15 @@
-const express = require("express")
-require("dotenv").config()
+require("dotenv").config();
+const express = require("express");
+const app = express();
+const cors = require("cors");
+
+const path = require("path");
 
 let PORT = process.env.PORT || 8080
 
-let app = express()
-app.use(express.static('./public'))
-app.use(express.json())
+app.use(express.static('./public'));
+app.use(express.json());
+app.use(cors());
 
 // app.get("/", (req, res) => {
 //   res.json("hello world")
