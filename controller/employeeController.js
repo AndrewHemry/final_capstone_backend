@@ -133,5 +133,5 @@ const listEmployees = function(req, res){
 
 
 module.exports = {
-    createEmployee, updateEmployee, deleteEmployee, showEmployee
+    createEmployee, updateEmployee, deleteEmployee, showEmployee, listEmployees
 }
