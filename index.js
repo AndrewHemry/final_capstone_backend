@@ -11,9 +11,9 @@ app.use(express.static('./public'));
 app.use(express.json());
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//   res.json("hello world")
-// })
+app.get("/", (req, res) => {
+  res.json("hello world")
+})
 
 let authRoutes = require("./routes/authRoutes")
 app.use(authRoutes)
