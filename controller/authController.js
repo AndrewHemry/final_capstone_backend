@@ -60,7 +60,7 @@ let login = async function(req, res){
         // let password_hash = results[0].password_hash
 
         // let goodPass = await argon.verify(password_hash, password)
-        let goodPass = password === admin_password;
+        let goodPass = password === password_hash;
 
         if(goodPass){
 
