@@ -31,7 +31,8 @@ const createEmployee = async function(req, res){
                 console.log("Failed to create new employee", err2)
             } else {
                 console.log("Created employee", results2)
-                res.sendStatus(202)
+                // ACTION ITEM - The json will provide the response info back from the server as well as the response code
+                res.status(202).json(results2)
             }
         })
     })
