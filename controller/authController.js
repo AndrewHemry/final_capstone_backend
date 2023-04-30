@@ -4,28 +4,28 @@ let jwt = require("jsonwebtoken")
 
 let JWT_SECRET = process.env.JWT_SECRET
 
-let register = async function(req, res){
+// let register = async function(req, res){
 
-    let first_name = req.body.first_name
-    let last_name = req.body.last_name
-    let email_address = req.body.email_address
-    let password = req.body.password
+//     let first_name = req.body.first_name
+//     let last_name = req.body.last_name
+//     let email_address = req.body.email_address
+//     let password = req.body.password
 
-    let password_hash = await argon.hash(password)
+//     let password_hash = await argon.hash(password)
 
-    let sqlCommand = "INSERT into admin_login (first_name, last_name, email_address, password_hash) values (?, ?, ?, ?)"
-    let params = [first_name, last_name, email_address, password_hash]
+//     let sqlCommand = "INSERT into admin_login (first_name, last_name, email_address, password_hash) values (?, ?, ?, ?)"
+//     let params = [first_name, last_name, email_address, password_hash]
 
-    db.query(sqlCommand, params, function(err, results){
-        if(err){
-            console.log("Registartion Unsuccessful", err)
-            res.sendStatus(500)
-        } else {
-            console.log("Successfully Registered", results)
-            res.sendStatus(201)
-        }
-    })
-}
+//     db.query(sqlCommand, params, function(err, results){
+//         if(err){
+//             console.log("Registartion Unsuccessful", err)
+//             res.sendStatus(500)
+//         } else {
+//             console.log("Successfully Registered", results)
+//             res.sendStatus(201)
+//         }
+//     })
+// }
 
 let login = async function(req, res){
 
@@ -84,8 +84,8 @@ let login = async function(req, res){
     })
 }
 
-// module.exports = { login }
+module.exports = { login }
 
-module.exports = {
-    register, login
-}
+// module.exports = {
+//     register, login
+// }
